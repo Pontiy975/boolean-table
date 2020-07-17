@@ -1,0 +1,52 @@
+.container {
+	text-align: center;
+
+	padding: 30px;
+	background-color: aliceblue;
+}
+
+.container ul {
+	text-align: left;
+}
+
+table {
+	border-collapse:collapse;
+	margin: 0 auto;
+}
+td, th {
+	border:1px solid black;
+	min-width: 50px;
+}
+select {
+	width: 100%;
+}
+button {
+	min-width: 200px;
+	margin: 10px;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 0;
+	background-color: #e0f0ff;
+	font-size: 16px;
+}
+
+button:hover {
+	background-color: #a0b0bf;
+}
+button:disabled:hover {
+	background-color: #e0f0ff;
+}
+button:active {
+	background-color: black;
+	color: white;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	font-size: 16px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>boolean table</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<button class="add-row">Добавить строку</button>
+		<button class="add-var">Добавить переменную</button>
+		<br>
+		<button class="del-row" disabled>Удалить строку</button>
+		<button class="del-var" disabled>Удалить переменную</button>
+
+		<ul>
+			<li><b>*</b> - конъюнкция</li>
+			<li><b>+</b> - дизъюнкция</li>
+			<li><b>!</b> - отрицание</li>
+		</ul>
+
+		<br>
+		<input placeholder="Введите выражение">
+
+		<table>
+			<thead>
+				<tr>
+					<th>A</th>
+					<th>B</th>
+					<th class="expression"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<select>
+							<option>0</option>
+							<option>1</option>
+						</select>
+					</td>
+					<td>
+						<select>
+							<option>0</option>
+							<option>1</option>
+						</select>
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
