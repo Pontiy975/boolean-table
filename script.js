@@ -101,8 +101,12 @@ document.addEventListener("keypress", function () {
 				row = rows[i].querySelectorAll("td");
 
 				let expression = document.querySelector("input").value;
-				expression = expression.replace(/[*]/g, "&&");
-				expression = expression.replace(/[+]/g, "||");
+				expression = expression.replace(/[=]/g, "==");
+				if (expression.search(/\w!\w/g) != -1) {
+					let sub = expression.substr(expression.search(/\w!\w/g), 3);
+					sub = sub.replace(/[!]/g, "!=");
+					expression = expression.replace(/\w!\w/g, sub);
+				}
 				expression = expression.toUpperCase();
 
 				varsName[varsName.length - 1].innerHTML = expression;
