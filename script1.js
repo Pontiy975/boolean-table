@@ -4,7 +4,7 @@ document.querySelector("button").onclick = function() {
 	let value = document.querySelector("input").value;
 	if (value.search(/[^а-я]/i) != -1 &&
 		value.search(/\d/) == -1 &&
-		(value.search(/\w[+!*=]\w/) != -1 || value.search(/^!\w/) != -1) &&
+		(value.search(/\w[+!*=]\w/) != -1 || value.search(/!\w/) != -1) &&
 		value.search(/[+!*=]/) != -1) {
 		let variables = unique(Array.from(value.replace(/\W/g, "")));
 		
@@ -22,7 +22,7 @@ document.addEventListener("keypress", function (event) {
 		let value = document.querySelector("input").value;
 		if (value.search(/[^а-я]/i) != -1 &&
 			value.search(/\d/) == -1 &&
-			(value.search(/\w[+!*=]\w/) != -1 || value.search(/^!\w/) != -1) &&
+			(value.search(/\w[+!*=]\w/) != -1 || value.search(/!\w/) != -1) &&
 			value.search(/[+!*=]/) != -1) {
 			let variables = unique(Array.from(value.replace(/\W/g, "")));
 			
