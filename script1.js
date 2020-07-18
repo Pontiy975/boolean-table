@@ -8,6 +8,9 @@ document.querySelector("button").onclick = function() {
 		createTABLE(variables.length, variables);
 		calculate();
 	}
+	else {
+		alert('Invalid Input!');
+	}
 }
 
 document.addEventListener("keypress", function (event) {
@@ -17,6 +20,9 @@ document.addEventListener("keypress", function (event) {
 			if (document.querySelector("table") != null) document.querySelector("table").remove();
 			createTABLE(variables.length, variables);
 			calculate();
+		}
+		else {
+			alert('Invalid Input!');
 		}
 	}
 });
