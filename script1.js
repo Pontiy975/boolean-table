@@ -3,9 +3,10 @@ document.querySelector("input").focus();
 document.querySelector("button").onclick = function() {
 	let value = document.querySelector("input").value;
 	if (value.search(/[^а-я]/i) != -1 &&
-		value.search(/\d/) == -1 &&
-		(value.search(/\w[+!*=]\w/) != -1 || value.search(/!\w/) != -1) &&
-		value.search(/[+!*=]/) != -1) {
+		value.search(/\d/i) == -1 &&
+		(value.search(/\w[+!*=]\w/i) != -1 || value.search(/!\w/) != -1) &&
+		value.search(/[+!*=]/i) != -1 &&
+		value.search(/\w[ ]\w/i) == -1) {
 		let variables = unique(Array.from(value.replace(/\W/g, "")));
 		
 		if (document.querySelector("table") != null) document.querySelector("table").remove();
@@ -21,9 +22,10 @@ document.addEventListener("keypress", function (event) {
 	if (event.keyCode == 13) {
 		let value = document.querySelector("input").value;
 		if (value.search(/[^а-я]/i) != -1 &&
-			value.search(/\d/) == -1 &&
-			(value.search(/\w[+!*=]\w/) != -1 || value.search(/!\w/) != -1) &&
-			value.search(/[+!*=]/) != -1) {
+			value.search(/\d/i) == -1 &&
+			(value.search(/\w[+!*=]\w/i) != -1 || value.search(/!\w/) != -1) &&
+			value.search(/[+!*=]/i) != -1 &&
+			value.search(/\w[ ]\w/i) == -1) {
 			let variables = unique(Array.from(value.replace(/\W/g, "")));
 			
 			if (document.querySelector("table") != null) document.querySelector("table").remove();
