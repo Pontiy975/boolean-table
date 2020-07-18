@@ -1,9 +1,13 @@
 document.querySelector("input").focus();
 
 document.querySelector("button").onclick = function() {
-
-	let variables = unique(Array.from(document.querySelector("input").value.replace(/\W/g, "")));
-	if (variables+"".search(/[^а-я]/i) != -1) {
+	let value = document.querySelector("input").value;
+	if (value.search(/[^а-я]/i) != -1 &&
+		value.search(/\d/) == -1 &&
+		(value.search(/\w[+!*=]\w/) != -1 || value.search(/^!\w/) != -1) &&
+		value.search(/[+!*=]/) != -1) {
+		let variables = unique(Array.from(value.replace(/\W/g, "")));
+		
 		if (document.querySelector("table") != null) document.querySelector("table").remove();
 		createTABLE(variables.length, variables);
 		calculate();
@@ -15,8 +19,13 @@ document.querySelector("button").onclick = function() {
 
 document.addEventListener("keypress", function (event) {
 	if (event.keyCode == 13) {
-		let variables = unique(Array.from(document.querySelector("input").value.replace(/\W/g, "")));
-		if (variables+"".search(/[^а-я]/i) != -1) {
+		let value = document.querySelector("input").value;
+		if (value.search(/[^а-я]/i) != -1 &&
+			value.search(/\d/) == -1 &&
+			(value.search(/\w[+!*=]\w/) != -1 || value.search(/^!\w/) != -1) &&
+			value.search(/[+!*=]/) != -1) {
+			let variables = unique(Array.from(value.replace(/\W/g, "")));
+			
 			if (document.querySelector("table") != null) document.querySelector("table").remove();
 			createTABLE(variables.length, variables);
 			calculate();
