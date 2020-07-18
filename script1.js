@@ -3,17 +3,21 @@ document.querySelector("input").focus();
 document.querySelector("button").onclick = function() {
 
 	let variables = unique(Array.from(document.querySelector("input").value.replace(/\W/g, "")));
-	if (document.querySelector("table") != null) document.querySelector("table").remove();
-	createTABLE(variables.length, variables);
-	calculate();
+	if (variables+"".search(/[^а-я]/i) != -1) {
+		if (document.querySelector("table") != null) document.querySelector("table").remove();
+		createTABLE(variables.length, variables);
+		calculate();
+	}
 }
 
 document.addEventListener("keypress", function (event) {
 	if (event.keyCode == 13) {
 		let variables = unique(Array.from(document.querySelector("input").value.replace(/\W/g, "")));
-		if (document.querySelector("table") != null) document.querySelector("table").remove();
-		createTABLE(variables.length, variables);
-		calculate();
+		if (variables+"".search(/[^а-я]/i) != -1) {
+			if (document.querySelector("table") != null) document.querySelector("table").remove();
+			createTABLE(variables.length, variables);
+			calculate();
+		}
 	}
 });
 
