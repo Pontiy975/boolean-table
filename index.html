@@ -7,48 +7,15 @@
 </head>
 <body>
 	<div class="container">
-		<button class="add-row">Добавить строку</button>
-		<button class="add-var">Добавить переменную</button>
-		<br>
-		<button class="del-row" disabled>Удалить строку</button>
-		<button class="del-var" disabled>Удалить переменную</button>
-
 		<ul>
 			<li><b>*</b> - конъюнкция</li>
 			<li><b>+</b> - дизъюнкция</li>
 			<li><b>!</b> - отрицание</li>
 		</ul>
-
+		<button class="calc">Построить таблицу</button>
 		<br>
-		<input placeholder="Введите выражение">
-
-		<table>
-			<thead>
-				<tr>
-					<th>A</th>
-					<th>B</th>
-					<th class="expression"></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<select>
-							<option>0</option>
-							<option>1</option>
-						</select>
-					</td>
-					<td>
-						<select>
-							<option>0</option>
-							<option>1</option>
-						</select>
-					</td>
-					<td></td>
-				</tr>
-			</tbody>
-		</table>
+		<input id="expression" placeholder="Введите выражение и нажмите Enter">
 	</div>
-	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="script1.js"></script>
 </body>
 </html>

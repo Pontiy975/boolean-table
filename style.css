@@ -42,7 +42,14 @@ button:active {
 	color: white;
 }
 
-input {
+td input {
+	background-color: aliceblue;
+	border: none;
+	color: black;
+	text-align: center;
+}
+
+#expression {
 	width: 100%;
 	padding: 10px;
 	outline: none;
