@@ -1,6 +1,7 @@
 document.querySelector("input").focus();
 
 document.querySelector("button").onclick = function() {
+
 	let variables = unique(Array.from(document.querySelector("input").value.replace(/\W/g, "")));
 	if (document.querySelector("table") != null) document.querySelector("table").remove();
 	createTABLE(variables.length, variables);
@@ -114,7 +115,14 @@ function calculate() {
 			expression = expression.replace(r, vars.get(name) == 1 ? true : false);
 			console.log('!!'+expression);
 		}
-
-		row[row.length - 1].innerHTML = eval(`!!(${expression})`) == true ? 1 : 0;
+		try {
+			row[row.length - 1].innerHTML = eval(`!!(${expression})`) == true ? 1 : 0;
+		} catch (e) {
+			if (e instanceof ReferenceError) {
+			    alert('ReferenceError');
+			    document.querySelector("table").remove();
+			    break;
+			}
+		}
 	}
 }
